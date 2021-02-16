@@ -38,12 +38,10 @@
 				rows = [],
 				cols = [],
 				solved = [],
-				tabindex,
 				$actives,
 				activePosition = 0,
 				activeClueIndex = 0,
 				currOri,
-				targetInput,
 				mode = 'interacting',
 				solvedToggle = false,
 				z = 0;
