@@ -39,7 +39,6 @@ class DB
 
     public function getTranslation($word)
     {
-        return $word;
         $translation = $this->queryScalar('SELECT translation FROM words WHERE word = ?', [$word]);
         if (is_null($translation)) {
             $translation = $this->fetchTranslation($word);
@@ -50,6 +49,8 @@ class DB
 
     private function fetchTranslation($line)
     {
+        echo 'Fetching: ' . $line . PHP_EOL;
+        sleep(11);
         $url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=cs&tl=en&dt=t&q=' . urlencode($line);
         $contents = json_decode(file_get_contents($url));
         if (is_null($contents)) {

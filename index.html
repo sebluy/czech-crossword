@@ -22,15 +22,15 @@
 		width: 90.3%;
 		margin: 10px auto;
 	}
-		table { 
+		table#puzzle {
 			border-collapse: collapse; 
 			border-spacing: 0; 
 			max-width: 100%;
 		}
-		table tr{
+		table#puzzle tr{
 			width: 100%;
 		}
-		table td {
+		table#puzzle td {
 			width: 5em;
 			height: 5em;
 			border: 1px solid #cdcdcd;
@@ -40,7 +40,7 @@
 			position: relative;
 		}
 				
-		td input {
+		#puzzle td input {
 			width: 100%;
 			height: 100%;
 			padding: 0em;
@@ -51,11 +51,11 @@
 			background-color: #f4f4f4;
 		}
 		
-		td input:focus {
+		#puzzle td input:focus {
 			background-color: #fff;
 		}
 		
-		td span {
+		#puzzle td span {
 			color: #444;
 			font-size: 0.8em;
 			position: absolute;
@@ -65,15 +65,15 @@
 		
 		input.done {
 			font-weight: bold;
-			color: green;
+			color: green !important;
 		}
 		
 		.active,
 		.clues-active {
-			background-color: #ddd;
+			background-color: #ddd !important;
 		}
 		.clue-done {
-			color: #999;
+			color: #999 !important;
 			text-decoration: line-through;
 		}
 		

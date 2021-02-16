@@ -16,7 +16,7 @@ class Crossword
 
     public function add($word)
     {
-        if (mb_strlen($word) === 1) return false;
+        if (mb_strlen($word) === 1 || isset($this->words[$word])) return false;
         if (empty($this->words)) {
             $this->tryToPlaceWordExact($word, [0, 0, 0]);
             return true;
@@ -78,7 +78,7 @@ JS;
     private function checkSpace($word, $position)
     {
         list($x, $y, $dir) = $position;
-        echo "Checking: {$word} at ({$x}, {$y}, {$dir})" . PHP_EOL;
+//        echo "Checking: {$word} at ({$x}, {$y}, {$dir})" . PHP_EOL;
 
         $new = false;
         $chars = mb_str_split($word);
