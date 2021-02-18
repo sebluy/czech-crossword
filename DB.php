@@ -34,6 +34,7 @@ class DB
     {
         $row = $this->queryRow('SELECT * FROM words WHERE id = ?', [$rank]);
         $row['word'] = mb_strtolower($row['word']);
+        $row['translation'] = $this->getTranslation(mb_strtolower($row['word']));
         return $row;
     }
 
@@ -57,7 +58,7 @@ class DB
             var_dump($http_response_header);
             throw new Exception('Too many requests');
         }
-        return $contents[0][0][0];
+        return mb_strtolower($contents[0][0][0]);
     }
 
     private function updateTranslation($word, $translation)

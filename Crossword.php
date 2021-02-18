@@ -41,7 +41,7 @@ class Crossword
         $json = json_encode(array_values($this->words));
         $js = <<<JS
 $(function () {
-	$('#puzzle-wrapper').crossword({$json});
+    new Crossword($json);
 });
 JS;
         file_put_contents('js/my-crossword.js', $js);
